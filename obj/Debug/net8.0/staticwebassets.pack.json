@@ -1,0 +1,53 @@
+{
+  "Files": [
+    {
+      "Id": "c:\\Users\\marquesj\\source\\repos\\ListWebsite\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "c:\\Users\\marquesj\\source\\repos\\ListWebsite\\obj\\Debug\\net8.0\\compressed\\d7xk09f21u.gz",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "c:\\Users\\marquesj\\source\\repos\\ListWebsite\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "c:\\Users\\marquesj\\source\\repos\\ListWebsite\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "c:\\Users\\marquesj\\source\\repos\\ListWebsite\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "c:\\Users\\marquesj\\source\\repos\\ListWebsite\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "c:\\Users\\marquesj\\source\\repos\\ListWebsite\\wwwroot\\icon-192.png",
+      "PackagePath": "staticwebassets\\icon-192.png"
+    },
+    {
+      "Id": "c:\\Users\\marquesj\\source\\repos\\ListWebsite\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.ListWebsite.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.ListWebsite.props",
+      "PackagePath": "build\\ListWebsite.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.ListWebsite.props",
+      "PackagePath": "buildMultiTargeting\\ListWebsite.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.ListWebsite.props",
+      "PackagePath": "buildTransitive\\ListWebsite.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -1,0 +1,102 @@
+@page "/edit"
+@page "/edit/{Id:int}"
+@using Models
+@inject NavigationManager NavigationManager
+
+<PageTitle>@title</PageTitle>
+
+<h1>@title</h1>
+
+@if (toDo is null)
+{
+    <h3><em>Loading...</em></h3>
+}
+else
+{
+    <div class="row">
+        <div class="col-sm-4">
+            <EditForm Model="@toDo" OnValidSubmit="Submit" class="formish">
+                <DataAnnotationsValidator />
+                <div class="mb-3">
+                    <label for="name" class="form-label">To Do Name:</label>
+                    <InputText id="name" @bind-Value="toDo.Name" class="form-control"></InputText>
+                    <ValidationMessage For="@(() => toDo.Name)" />
+                </div>
+                <div class="mb-3">
+                    <label for="type" class="form-label">Type:</label>
+                    <InputSelect id="type" @bind-Value="toDo.Type" class="form-select">
+                        <option value="">Select Type</option>
+                        <option value="Work">Work</option>
+                        <option value="School">School</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Other">Other</option>
+                    </InputSelect>
+                    <ValidationMessage For="@(() => toDo.Type)" />
+                </div>
+                <div class="mb-3">
+                    <label for="priority" class="form-label">Priority:</label>
+                    <InputNumber id="priority" @bind-Value="toDo.Priority" class="form-control"></InputNumber>
+                    <ValidationMessage For="@(() => toDo.Priority)" />
+                </div>
+                <div class="mb-3">
+                    <label for="dueDate" class="form-label">DueDate:</label>
+                    <InputDate id="dueDate" @bind-Value="toDo.DueDate" class="form-control"></InputDate>
+                    <ValidationMessage For="@(() => toDo.DueDate)" />
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-secondary" @onclick="Cancel">Cancel</button>
+            </EditForm>
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter]
+    public int? Id { get; set; }
+    private ToDo? toDo;
+
+    private string title = string.Empty;
+    protected override void OnParametersSet()
+    {
+        if (Id is not null)
+        {
+            ToDo oldToDo = ToDoDb.GetToDo(Id.Value);
+            toDo = new()
+            {
+                Id = oldToDo.Id,
+                Name = oldToDo.Name,
+                Type = oldToDo.Type,
+                Priority = oldToDo.Priority,
+                DueDate = oldToDo.DueDate
+            };
+            title = $"Editing: {toDo.Name}";
+        }
+        else
+        {
+            toDo = new()
+            {
+                Name = string.Empty,
+                Type = string.Empty,
+                DueDate = DateTime.UtcNow
+            };
+            title = "New To Do Item";
+        }
+    }
+    private void Submit()
+    {
+        if (toDo!.Id == 0)
+        {
+            ToDoDb.AddToDo(toDo);
+        }
+        else
+        {
+            ToDoDb.UpdateToDo(toDo);
+        }
+        NavigationManager.NavigateTo("/");
+
+    }
+    private void Cancel()
+    {
+        NavigationManager.NavigateTo("/");
+    }
+}
