@@ -1,7 +1,4 @@
 using System.ComponentModel.DataAnnotations;
-using System.IO.Compression;
-using Microsoft.AspNetCore.Components;
-using Microsoft.VisualBasic;
 
 namespace ListWebsite.Models;
 

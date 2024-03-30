@@ -1,6 +1,7 @@
 ﻿@page "/"
 @using Models
 @inject NavigationManager NavigationManager
+@inject ToDoDb ToDoDb
 
 <PageTitle>To Do List</PageTitle>
 
@@ -49,8 +50,9 @@ else
 @code {
     private ToDo[]? toDos;
     private ToDo? popUpToDo;
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
+        await ToDoDb.LoadToDoDataAsync();
         toDos = ToDoDb.GetToDos();
     }
     private void CreateToDo()
@@ -69,4 +71,5 @@ else
             toDos = ToDoDb.GetToDos();
         }
     }
+    public ToDo[] GetTo() => toDos;
 }

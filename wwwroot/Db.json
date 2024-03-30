@@ -1,0 +1,23 @@
+[
+    {
+        "Id": 1,
+        "Name": "2050 Assignment 1",
+        "Type": "School",
+        "Priority": 10.0,
+        "DueDate": "2024-02-24T00:00:00"
+    },
+    {
+        "Id": 2,
+        "Name": "Practice Blazor",
+        "Type": "Work",
+        "Priority": 7.4,
+        "DueDate": "2024-02-19T00:00:00"
+    },
+    {
+        "Id": 3,
+        "Name": "Get Skates",
+        "Type": "Entertainment",
+        "Priority": 7.9,
+        "DueDate": "2024-02-18T00:00:00"
+    }
+] 

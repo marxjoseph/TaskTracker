@@ -1,63 +1,59 @@
-using Newtonsoft.Json;
+using Microsoft.AspNetCore.Components;
+using System.Text.Json;
 
-namespace ListWebsite.Models;
-
-public static class ToDoDb
+namespace ListWebsite.Models
 {
-    private static readonly List<ToDo> toDos = new()
+    public class ToDoDb
     {
-        new ToDo()
+        private readonly HttpClient HttpClient;
+        private List<ToDo> toDos = new List<ToDo>();
+
+        public ToDoDb(HttpClient httpClient)
         {
-            Id = 1,
-            Name = "2050 Assignment 1",
-            Type = "School",
-            Priority = 10M,
-            DueDate = new DateTime(2024, 2, 24)
-        },
-        new ToDo()
-        {
-            Id = 2,
-            Name = "Practice Blazor",
-            Type = "Work",
-            Priority = 7.4M,
-            DueDate = new DateTime(2024, 2, 19)
-        },
-        new ToDo()
-        {
-            Id = 3,
-            Name = "Get Skates",
-            Type = "Entertainment",
-            Priority = 7.9M,
-            DueDate = new DateTime(2024, 2, 18)
+            HttpClient = httpClient;
         }
-    };
+        public async Task LoadToDoDataAsync()
+        {
+            try
+            {
+                var response = await HttpClient.GetAsync("Db.json");
+                response.EnsureSuccessStatusCode(); // Ensure response is successful
+                var json = await response.Content.ReadAsStringAsync();
+                toDos = JsonSerializer.Deserialize<List<ToDo>>(json);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Failed to fetch JSON data: {ex.Message}");
+            }
+        }
 
-    public static ToDo[] GetToDos()
-    {
-        return toDos.ToArray();
-    }
+        public ToDo[] GetToDos()
+        {
+            return toDos.ToArray();
+        }
 
-    public static void AddToDo(ToDo todo)
-    {
-        todo.Id = toDos.Max(todo => todo.Id) + 1;
-        toDos.Add(todo);
-    }
+        public void AddToDo(ToDo todo)
+        {
+            todo.Id = toDos.Max(todo => todo.Id) + 1;
+            toDos.Add(todo);
+        }
 
-    public static ToDo GetToDo(int id)
-    {
-        return toDos.Find(toDo => id == toDo.Id) ?? throw new Exception("Not in To Do List");
-    }
-    public static void UpdateToDo(ToDo newToDo)
-    {
-        ToDo oldToDo = GetToDo(newToDo.Id);
-        oldToDo.Name = newToDo.Name;
-        oldToDo.Type = newToDo.Type;
-        oldToDo.Priority = newToDo.Priority;
-        oldToDo.DueDate = newToDo.DueDate;
-    }
-    public static void DeleteToDo(int id)
-    {
-        ToDo toDo = GetToDo(id);
-        toDos.Remove(toDo);
+        public ToDo GetToDo(int id)
+        {
+            return toDos.Find(toDo => id == toDo.Id) ?? throw new Exception("Not in To Do List");
+        }
+        public void UpdateToDo(ToDo newToDo)
+        {
+            ToDo oldToDo = GetToDo(newToDo.Id);
+            oldToDo.Name = newToDo.Name;
+            oldToDo.Type = newToDo.Type;
+            oldToDo.Priority = newToDo.Priority;
+            oldToDo.DueDate = newToDo.DueDate;
+        }
+        public void DeleteToDo(int id)
+        {
+            ToDo toDo = GetToDo(id);
+            toDos.Remove(toDo);
+        }
     }
 }

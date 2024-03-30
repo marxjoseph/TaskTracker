@@ -13,35 +13,35 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = browser
 build_property.RootNamespace = ListWebsite
 build_property.RootNamespace = ListWebsite
-build_property.ProjectDir = C:\Users\marquesj\source\repos\ListWebsite\
+build_property.ProjectDir = c:\Repository\TaskTracker\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = false
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\marquesj\source\repos\ListWebsite
+build_property.MSBuildProjectDirectory = c:\Repository\TaskTracker
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/marquesj/source/repos/ListWebsite/App.razor]
+[c:/Repository/TaskTracker/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/marquesj/source/repos/ListWebsite/Layout/MainLayout.razor]
+[c:/Repository/TaskTracker/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/marquesj/source/repos/ListWebsite/Pages/DeleteToDo.razor]
+[c:/Repository/TaskTracker/Pages/DeleteToDo.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGVsZXRlVG9Eby5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/marquesj/source/repos/ListWebsite/Pages/EditToDo.razor]
+[c:/Repository/TaskTracker/Pages/EditToDo.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdFRvRG8ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/marquesj/source/repos/ListWebsite/Pages/Index.razor]
+[c:/Repository/TaskTracker/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/marquesj/source/repos/ListWebsite/_Imports.razor]
+[c:/Repository/TaskTracker/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 

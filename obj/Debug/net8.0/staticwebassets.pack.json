@@ -1,35 +1,39 @@
 {
   "Files": [
     {
-      "Id": "c:\\Users\\marquesj\\source\\repos\\ListWebsite\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "Id": "c:\\Repository\\TaskTracker\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
       "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
     },
     {
-      "Id": "c:\\Users\\marquesj\\source\\repos\\ListWebsite\\obj\\Debug\\net8.0\\compressed\\d7xk09f21u.gz",
+      "Id": "c:\\Repository\\TaskTracker\\obj\\Debug\\net8.0\\compressed\\j7kqamba9g.gz",
       "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
     },
     {
-      "Id": "c:\\Users\\marquesj\\source\\repos\\ListWebsite\\wwwroot\\css\\app.css",
+      "Id": "c:\\Repository\\TaskTracker\\wwwroot\\Db.json",
+      "PackagePath": "staticwebassets\\Db.json"
+    },
+    {
+      "Id": "c:\\Repository\\TaskTracker\\wwwroot\\css\\app.css",
       "PackagePath": "staticwebassets\\css\\app.css"
     },
     {
-      "Id": "c:\\Users\\marquesj\\source\\repos\\ListWebsite\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Id": "c:\\Repository\\TaskTracker\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Id": "c:\\Users\\marquesj\\source\\repos\\ListWebsite\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "Id": "c:\\Repository\\TaskTracker\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Id": "c:\\Users\\marquesj\\source\\repos\\ListWebsite\\wwwroot\\favicon.png",
+      "Id": "c:\\Repository\\TaskTracker\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
     },
     {
-      "Id": "c:\\Users\\marquesj\\source\\repos\\ListWebsite\\wwwroot\\icon-192.png",
+      "Id": "c:\\Repository\\TaskTracker\\wwwroot\\icon-192.png",
       "PackagePath": "staticwebassets\\icon-192.png"
     },
     {
-      "Id": "c:\\Users\\marquesj\\source\\repos\\ListWebsite\\wwwroot\\index.html",
+      "Id": "c:\\Repository\\TaskTracker\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },
     {
