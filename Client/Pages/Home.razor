@@ -1,0 +1,45 @@
+﻿@page "/"
+
+@using Client.Services
+@using Models;
+
+@inject PersonService PersonService
+
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, world!</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Birthdate</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(Person person in Persons)
+        {
+            <tr>
+                <td>
+                    @person.FirstName
+                </td>
+                <td>
+                    @person.LastName
+                </td>
+                <td>
+                    @person.BirthDate.ToString("yyyy-MM-dd")
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    IEnumerable<Person> Persons = [];
+
+    protected override async Task OnInitializedAsync()
+    {
+        Persons = await PersonService.GetAllPersons();
+    }
+}
