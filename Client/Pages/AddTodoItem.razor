@@ -10,23 +10,29 @@
 
 <h1>Add To-Do Item</h1>
 
-<EditForm Model="@TodoItem" OnSubmit="@Submit">
-    <div class="form-group">
+<EditForm Model="@TodoItem" OnSubmit="@Submit" style="margin-right: 70%;" class="light-grey-border">
+    <div class="form-group mb-3">
         <label for="ItemName">Item name</label>
         <InputText @bind-Value=TodoItem.ItemName class="form-control" id="ItemName"></InputText>
     </div>
-    <div class="form-group">
+    <div class="form-group mb-3">
         <label for="Priority">Priority</label>
         <InputNumber @bind-Value=TodoItem.Priority class="form-control" id="Priority"></InputNumber>
     </div>
-    <div class="form-group">
+    <div class="form-group mb-3">
         <label for="DateDue">DateDue</label>
         <InputDate @bind-Value=TodoItem.DateDue class="form-control" id="DateDue"></InputDate>
     </div>
     <input type="submit" class="btn btn-primary" value="Save" />
 </EditForm>
 
-
+<style>
+    .light-grey-border {
+        border: 1px solid lightgrey; 
+        border-radius: 5px; 
+        padding: 15px; 
+    }
+</style>
 
 @code {
     TodoItem TodoItem = new();
