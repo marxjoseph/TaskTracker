@@ -8,6 +8,6 @@ builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("http://localhost:5090/") });
-builder.Services.AddScoped<PersonService>();
+builder.Services.AddScoped<TodoItemService>();
 
 await builder.Build().RunAsync();

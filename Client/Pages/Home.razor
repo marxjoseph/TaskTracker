@@ -3,7 +3,7 @@
 @using Client.Services
 @using Models;
 
-@inject PersonService PersonService
+@inject TodoItemService TodoItemService
 
 <PageTitle>Home</PageTitle>
 
@@ -18,17 +18,17 @@
         </tr>
     </thead>
     <tbody>
-        @foreach(Person person in Persons)
+        @foreach (TodoItem todoItem in TodoList)
         {
             <tr>
                 <td>
-                    @person.FirstName
+                    @todoItem.ItemName
                 </td>
                 <td>
-                    @person.LastName
+                    @todoItem.Priority
                 </td>
                 <td>
-                    @person.BirthDate.ToString("yyyy-MM-dd")
+                    @(todoItem.DateDue?.ToString("yyyy-MM-dd") ?? "No Due Date")
                 </td>
             </tr>
         }
@@ -36,10 +36,10 @@
 </table>
 
 @code {
-    IEnumerable<Person> Persons = [];
+    IEnumerable<TodoItem> TodoList = [];
 
     protected override async Task OnInitializedAsync()
     {
-        Persons = await PersonService.GetAllPersons();
+        TodoList = await TodoItemService.GetTodoList();
     }
 }

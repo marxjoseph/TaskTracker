@@ -9,7 +9,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddSingleton<PersonRepository>();
+builder.Services.AddSingleton<TodoRepository>();
 
 builder.Services.AddCors(options =>
 {

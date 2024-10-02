@@ -1,0 +1,39 @@
+﻿@page "/addtodoitem"
+
+@using Client.Services
+@using Models;
+
+@inject TodoItemService TodoItemService
+@inject NavigationManager NaviagationManager
+
+<PageTitle>Add To-Do Item</PageTitle>
+
+<h1>Add To-Do Item</h1>
+
+<EditForm Model="@TodoItem" OnSubmit="@Submit">
+    <div class="form-group">
+        <label for="ItemName">Item name</label>
+        <InputText @bind-Value=TodoItem.ItemName class="form-control" id="ItemName"></InputText>
+    </div>
+    <div class="form-group">
+        <label for="Priority">Priority</label>
+        <InputNumber @bind-Value=TodoItem.Priority class="form-control" id="Priority"></InputNumber>
+    </div>
+    <div class="form-group">
+        <label for="DateDue">DateDue</label>
+        <InputDate @bind-Value=TodoItem.DateDue class="form-control" id="DateDue"></InputDate>
+    </div>
+    <input type="submit" class="btn btn-primary" value="Save" />
+</EditForm>
+
+
+
+@code {
+    TodoItem TodoItem = new();
+
+    async Task Submit(EditContext editContext)
+    {
+        await TodoItemService.SaveNewTodoItem(TodoItem);
+        NaviagationManager.NavigateTo("/");
+    }
+}
