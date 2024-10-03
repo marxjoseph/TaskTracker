@@ -3,25 +3,5 @@
     "ItemName": "Buy groceries",
     "Priority": 1,
     "DateDue": "2024-10-10T00:00:00"
-  },
-  {
-    "ItemName": "Complete project report",
-    "Priority": 2,
-    "DateDue": "2024-10-15T00:00:00"
-  },
-  {
-    "ItemName": "Schedule dentist appointment",
-    "Priority": 3,
-    "DateDue": "2024-10-20T00:00:00"
-  },
-  {
-    "ItemName": "Gym",
-    "Priority": 2,
-    "DateDue": "2024-10-18T00:00:00"
-  },
-  {
-    "ItemName": "Run",
-    "Priority": 5,
-    "DateDue": "2024-10-04T00:00:00"
   }
 ]

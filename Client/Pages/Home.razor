@@ -16,6 +16,7 @@
                     <th>Item name</th>
                     <th>Priority</th>
                     <th>Date Due</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -31,6 +32,9 @@
                         <td>
                             @(todoItem.DateDue?.ToString("yyyy-MM-dd") ?? "No Due Date")
                         </td>
+                        <td>
+                        <button class="btn btn-danger" @onclick="() => Delete(todoItem)">Delete</button>
+                        </td>
                     </tr>
                 }
             </tbody>
@@ -43,5 +47,11 @@
     protected override async Task OnInitializedAsync()
     {
         TodoList = await TodoItemService.GetTodoList();
+    }
+
+    public async Task Delete(TodoItem todoItem)
+    {
+        await TodoItemService.DeleteTodoItem(todoItem.ItemName);
+        await OnInitializedAsync();
     }
 }

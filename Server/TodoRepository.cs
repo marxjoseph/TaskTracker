@@ -36,6 +36,12 @@ public class TodoRepository
         SaveToFile(); // Save changes to the file
     }
 
+    public void DeleteTodoItem(string itemName)
+    {
+        _todoList.RemoveAll(todoItem => todoItem.ItemName == itemName);
+        SaveToFile(); // Save changes to the file
+    }
+
     private void SaveToFile()
     {
         // Convert the list to JSON and write it to the file

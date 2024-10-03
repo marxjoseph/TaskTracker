@@ -13,4 +13,8 @@ public class TodoItemService(HttpClient httpClient)
     {
         await httpClient.PostAsJsonAsync("api/Todo", todoItem);
     }
+    public async Task DeleteTodoItem(string todoItemName)
+    {
+        await httpClient.DeleteAsync($"api/Todo/{todoItemName}");
+    }
 }

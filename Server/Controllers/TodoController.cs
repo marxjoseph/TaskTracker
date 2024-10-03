@@ -18,4 +18,10 @@ public class TodoController : Controller
     {
         todoRepository.AddTodoItem(todoItem);
     }
+
+    [HttpDelete("{itemName}")]
+    public void DeleteAsync(string itemName, [FromServices] TodoRepository todoRepository)
+    {
+        todoRepository.DeleteTodoItem(itemName);
+    }
 }
